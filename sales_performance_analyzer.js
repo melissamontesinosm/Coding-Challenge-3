@@ -6,7 +6,7 @@ function calculateAverageSales(salesFigures) {
     return averageSales;
 }
 const salesFigures = [1111, 2222, 3333, 4444, 5555]; //Example Data 
-console.log("Average Sales:", calculateAverageSales(salesFigures)); // Output: 16665
+console.log("Average Sales:", calculateAverageSales(salesFigures)); // Output: 3333
 
 
 // Task 2: Create a Function to Determine Performance Rating
