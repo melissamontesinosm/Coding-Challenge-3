@@ -43,6 +43,6 @@ function findTopAndBottomPerformers(salesperson) {
     
     const topPerformer = salesperson.find(salesperson => salesperson.totalSales === maxSales);
     const bottomPerformer = salesperson.find(salesperson => salesperson.totalSales === minSales);
-        return (topPerformer,bottomPerformer)
+        return {topPerformer,bottomPerformer}
     
 }
