@@ -10,7 +10,7 @@ console.log("Average Sales:", calculateAverageSales(salesFigures)); // Output: 1
 
 
 // Task 2: Create a Function to Determine Performance Rating
-let averageSales= (calculateAverageSales(sales));
+let averageSales = calculateAverageSales(sales);
 
 function determinePerformanceRating(averageSales) {
     if (averageSales > 10000) {
@@ -26,3 +26,6 @@ function determinePerformanceRating(averageSales) {
 
 console.log("Performance Rating:", determinePerformanceRating(averageSales)); 
   
+
+// Task 3: Create a Function to Identify Top and Bottom Performers
+
