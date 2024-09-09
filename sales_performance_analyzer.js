@@ -29,20 +29,31 @@ console.log("Performance Rating:", determinePerformanceRating(averageSales));
 
 // Task 3: Create a Function to Identify Top and Bottom Performers
 
-function findTopAndBottomPerformers(salesperson) {
-    const salesPerson = [
-        { name: 'Alice', totalSales: [12000, 15000, 13000] },    
-        { name: 'Bob', totalSales: [7000, 6000, 7500] },
-        { name: 'Charlie', totalSales: [3000, 4000, 3500] },
-        { name: 'Diana', totalSales: [9000, 8500, 9200] },
-    ];
+function findTopAndBottomPerformers(salespeople) {
+   const Totalsales = salespeople.map(person => ({...person,
+    TotalSalesSum: person.totalSales.reduce((acc,sale)=> acc + sale, 0)
+   }));
+
+   const maxSales = Math.max(...Totalsales.map(person => person.TotalSalesSum)); 
+   const minSales = Math.min(...Totalsales.map(person => person.TotalSalesSum));
+
+   const topPerformer = Totalsales.find(person => person.TotalSalesSum === maxSales);
+   const bottomPerformer = Totalsales.find(person => person.TotalSalesSum === minSales);
+
+       return {topPerformer,bottomPerformer};
+   
 }
-{
-    const maxSales = Math.max(...salesperson.map(salesperson => salesperson.totalsales)); 
-    const minSales = Math.min(...salesperson.map(salesperson => salesperson.totalsales));
-    
-    const topPerformer = salesperson.find(salesperson => salesperson.totalSales === maxSales);
-    const bottomPerformer = salesperson.find(salesperson => salesperson.totalSales === minSales);
-        return {topPerformer,bottomPerformer}
-    
-}
+
+// Data Set 1
+const salespeople = [
+    { name: 'Alice', totalSales: [12000, 15000, 13000] },    
+    { name: 'Bob', totalSales: [7000, 6000, 7500] },
+    { name: 'Charlie', totalSales: [3000, 4000, 3500] },
+    { name: 'Diana', totalSales: [9000, 8500, 9200] },
+];
+
+const result = findTopAndBottomPerformers(salespeople);
+console.log(result);
+
+
+
